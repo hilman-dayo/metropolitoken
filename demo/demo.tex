@@ -1,6 +1,6 @@
 \documentclass[10pt]{beamer}
 
-\usetheme{metropolis}
+\usetheme{metropolitoken}
 \usepackage{appendixnumberbeamer}
 
 \usepackage{booktabs}
@@ -10,9 +10,9 @@
 \usepgfplotslibrary{dateplot}
 
 \usepackage{xspace}
-\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolitoken}}\xspace}
 
-\title{Metropolis}
+\title{Metropolitoken}
 \subtitle{A modern beamer theme}
 \date{\today}
 \author{Matthias Vogelgesang}
@@ -30,7 +30,7 @@
 
 \section{Introduction}
 
-\begin{frame}[fragile]{Metropolis}
+\begin{frame}[fragile]{Metropolitoken}
 
   The \themename theme is a Beamer theme with minimal visual noise
   inspired by the \href{https://github.com/hsrmbeamertheme/hsrmbeamertheme}{\textsc{hsrm} Beamer
@@ -39,7 +39,7 @@
   Enable the theme by loading
 
   \begin{verbatim}    \documentclass{beamer}
-    \usetheme{metropolis}\end{verbatim}
+    \usetheme{metropolitoken}\end{verbatim}
 
   Note, that you have to have Mozilla's \emph{Fira Sans} font and XeTeX
   installed to enjoy this wonderful typography.
@@ -54,49 +54,49 @@
 
 \section{Title formats}
 
-\begin{frame}{Metropolis title formats}
-	\themename supports 4 different title formats:
-	\begin{itemize}
-		\item Regular
-		\item \textsc{Small caps}
-		\item \textsc{all small caps}
-		\item ALL CAPS
-	\end{itemize}
-	They can either be set at once for every title type or individually.
+\begin{frame}{Metropolitoken title formats}
+  \themename supports 4 different title formats:
+  \begin{itemize}
+    \item Regular
+    \item \textsc{Small caps}
+    \item \textsc{all small caps}
+    \item ALL CAPS
+  \end{itemize}
+  They can either be set at once for every title type or individually.
 \end{frame}
 
 {
     \metroset{titleformat frame=smallcaps}
 \begin{frame}{Small caps}
-	This frame uses the \texttt{smallcaps} title format.
+  This frame uses the \texttt{smallcaps} title format.
 
-	\begin{alertblock}{Potential Problems}
-		Be aware that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in small caps will be typeset with the Computer Modern Serif font instead.
-	\end{alertblock}
+  \begin{alertblock}{Potential Problems}
+    Be aware that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in small caps will be typeset with the Computer Modern Serif font instead.
+  \end{alertblock}
 \end{frame}
 }
 
 {
 \metroset{titleformat frame=allsmallcaps}
 \begin{frame}{All small caps}
-	This frame uses the \texttt{allsmallcaps} title format.
+  This frame uses the \texttt{allsmallcaps} title format.
 
-	\begin{alertblock}{Potential problems}
-		As this title format also uses small caps you face the same problems as with the \texttt{smallcaps} title format. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
+  \begin{alertblock}{Potential problems}
+    As this title format also uses small caps you face the same problems as with the \texttt{smallcaps} title format. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
 
-		As a rule of thumb: just use it for plaintext-only titles.
-	\end{alertblock}
+    As a rule of thumb: just use it for plaintext-only titles.
+  \end{alertblock}
 \end{frame}
 }
 
 {
 \metroset{titleformat frame=allcaps}
 \begin{frame}{All caps}
-	This frame uses the \texttt{allcaps} title format.
+  This frame uses the \texttt{allcaps} title format.
 
-	\begin{alertblock}{Potential Problems}
-		This title format is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
-	\end{alertblock}
+  \begin{alertblock}{Potential Problems}
+    This title format is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
+  \end{alertblock}
 \end{frame}
 }
 

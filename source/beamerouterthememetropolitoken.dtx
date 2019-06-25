@@ -12,7 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerouterthememetropolis}[2017/01/23 Metropolis outer theme]
+\ProvidesPackage{beamerouterthememetropolitoken}[2017/01/23 Metropolitoken outer theme]
 %</package>
 % \fi
 % \CheckSum{0}
@@ -44,7 +44,7 @@
 %    Adds slide numbers to the bottom right of each slide.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/outer/numbering/.cd,
+  /metropolitoken/outer/numbering/.cd,
     .is choice,
     none/.code=\setbeamertemplate{frame numbering}[none],
     counter/.code=\setbeamertemplate{frame numbering}[counter],
@@ -57,24 +57,24 @@
 %    Adds a progress bar to the top, bottom, or frametitle of each slide.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/outer/progressbar/.cd,
+  /metropolitoken/outer/progressbar/.cd,
     .is choice,
     none/.code={%
       \setbeamertemplate{headline}[plain]
       \setbeamertemplate{frametitle}[plain]
       \setbeamertemplate{footline}[plain]
     },
-    head/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    head/.code={\pgfkeys{/metropolitoken/outer/progressbar=none}
       \addtobeamertemplate{headline}{}{%
         \usebeamertemplate*{progress bar in head/foot}
       }
     },
-    frametitle/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    frametitle/.code={\pgfkeys{/metropolitoken/outer/progressbar=none}
       \addtobeamertemplate{frametitle}{}{%
         \usebeamertemplate*{progress bar in head/foot}
       }
     },
-    foot/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    foot/.code={\pgfkeys{/metropolitoken/outer/progressbar=none}
       \addtobeamertemplate{footline}{}{%
         \usebeamertemplate*{progress bar in head/foot}%
       }
@@ -83,11 +83,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\metropolis@outer@setdefaults}
+% \begin{macro}{\metropolitoken@outer@setdefaults}
 %    Sets default values for outer theme options.
 %    \begin{macrocode}
-\newcommand{\metropolis@outer@setdefaults}{
-  \pgfkeys{/metropolis/outer/.cd,
+\newcommand{\metropolitoken@outer@setdefaults}{
+  \pgfkeys{/metropolitoken/outer/.cd,
     numbering=counter,
     progressbar=none,
   }
@@ -148,30 +148,30 @@
 %    Templates for the frame title, which is optionally underlined with a
 %    progress bar.
 %    \begin{macrocode}
-\newlength{\metropolis@frametitle@padding}
-\setlength{\metropolis@frametitle@padding}{2.2ex}
-\newcommand{\metropolis@frametitlestrut@start}{
-  \rule{0pt}{\metropolis@frametitle@padding +%
+\newlength{\metropolitoken@frametitle@padding}
+\setlength{\metropolitoken@frametitle@padding}{2.2ex}
+\newcommand{\metropolitoken@frametitlestrut@start}{
+  \rule{0pt}{\metropolitoken@frametitle@padding +%
     \totalheightof{%
-      \ifcsdef{metropolis@frametitleformat}{\metropolis@frametitleformat X}{X}%
+      \ifcsdef{metropolitoken@frametitleformat}{\metropolitoken@frametitleformat X}{X}%
     }%
   }%
 }
-\newcommand{\metropolis@frametitlestrut@end}{
-  \rule[-\metropolis@frametitle@padding]{0pt}{\metropolis@frametitle@padding}
+\newcommand{\metropolitoken@frametitlestrut@end}{
+  \rule[-\metropolitoken@frametitle@padding]{0pt}{\metropolitoken@frametitle@padding}
 }
 \defbeamertemplate{frametitle}{plain}{%
   \nointerlineskip%
   \begin{beamercolorbox}[%
       wd=\paperwidth,%
       sep=0pt,%
-      leftskip=\metropolis@frametitle@padding,%
-      rightskip=\metropolis@frametitle@padding,%
+      leftskip=\metropolitoken@frametitle@padding,%
+      rightskip=\metropolitoken@frametitle@padding,%
     ]{frametitle}%
-  \metropolis@frametitlestrut@start%
+  \metropolitoken@frametitlestrut@start%
   \insertframetitle%
   \nolinebreak%
-  \metropolis@frametitlestrut@end%
+  \metropolitoken@frametitlestrut@end%
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{%
@@ -186,19 +186,19 @@
 %    on each page. Much of this code is duplicated in the inner theme's
 %    template |progress bar in section page|.
 %    \begin{macrocode}
-\newlength{\metropolis@progressinheadfoot}
-\newlength{\metropolis@progressinheadfoot@linewidth}
-\setlength{\metropolis@progressinheadfoot@linewidth}{0.4pt}
+\newlength{\metropolitoken@progressinheadfoot}
+\newlength{\metropolitoken@progressinheadfoot@linewidth}
+\setlength{\metropolitoken@progressinheadfoot@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in head/foot}{
   \nointerlineskip
-  \setlength{\metropolis@progressinheadfoot}{%
+  \setlength{\metropolitoken@progressinheadfoot}{%
     \paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
   }%
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
     \tikzexternaldisable%
     \begin{tikzpicture}
-      \fill[bg] (0,0) rectangle (\paperwidth, \metropolis@progressinheadfoot@linewidth);
-      \fill[fg] (0,0) rectangle (\metropolis@progressinheadfoot, \metropolis@progressinheadfoot@linewidth);
+      \fill[bg] (0,0) rectangle (\paperwidth, \metropolitoken@progressinheadfoot@linewidth);
+      \fill[fg] (0,0) rectangle (\metropolitoken@progressinheadfoot, \metropolitoken@progressinheadfoot@linewidth);
     \end{tikzpicture}%
     \tikzexternalenable%
   \end{beamercolorbox}
@@ -217,7 +217,7 @@
 \AtBeginDocument{%
   \apptocmd{\appendix}{%
     \pgfkeys{%
-      /metropolis/outer/.cd,
+      /metropolitoken/outer/.cd,
       numbering=none,
       progressbar=none}
     }{}{}
@@ -227,8 +227,8 @@
 % \subsubsection{Process package options}
 %
 %    \begin{macrocode}
-\metropolis@outer@setdefaults
-\ProcessPgfPackageOptions{/metropolis/outer}
+\metropolitoken@outer@setdefaults
+\ProcessPgfPackageOptions{/metropolitoken/outer}
 %    \end{macrocode}
 %
 % \iffalse

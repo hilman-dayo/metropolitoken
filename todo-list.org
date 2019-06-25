@@ -1,0 +1,42 @@
+The things need to be done to convert =metropolis= to =metropolistoken=.
+
+* Naming [7/7]
+  Change every instance of =metropolis= to =metropolistoken= (from the file names to the
+  file contents).
+
+  - [X] Makefile
+  - [X] NEWS
+    - not needed. maybe will delete it?
+  - [X] README.md
+    - guess I gonna write it back...
+  - [X] demo
+    - [X] demo.bib
+    - [X] demo.tex
+    - [X] logo.eps
+    - [X] logo.pdf
+    - [X] logo.svg
+  - [X] doc
+    - [X] metropolistheme.dtx
+  - [X] docker
+    - [X] Dockerfile
+      - not needed
+    - [X] getFiraFont.sh
+      - not needed
+  - [X] source
+    - [X] beamercolorthememetropolis-highcontrast.dtx
+    - [X] beamercolorthememetropolis.dtx
+    - [X] beamerfontthememetropolis.dtx
+    - [X] beamerouterthememetropolis.dtx
+    - [X] beamerthememetropolis.dtx
+    - [X] beamerthememetropolis.ins
+    - [X] pgfplotsthemetol.dtx
+    - [X] beamerinnerthememetropolis.dtx
+
+* Changing [1/2]
+  - [ ] put lab's image file
+  - [X] edit the innertheme.dtx to reflect my needs...
+
+* Others/Cleaning [0/3]
+  - [ ] Write README accordingly
+  - [ ] Delete NEWS?
+  - [ ] Look at the =demo.tex=. Looks like there are some cool stuff in there.
