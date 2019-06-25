@@ -32,8 +32,8 @@ The things need to be done to convert =metropolis= to =metropolistoken=.
     - [X] pgfplotsthemetol.dtx
     - [X] beamerinnerthememetropolis.dtx
 
-* Changing [1/2]
-  - [ ] put lab's image file
+* Changing [2/2]
+  - [X] put lab's image file
   - [X] edit the innertheme.dtx to reflect my needs...
 
 * Others/Cleaning [0/3]
