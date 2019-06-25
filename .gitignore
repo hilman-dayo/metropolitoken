@@ -39,6 +39,7 @@
 # Output
 
 *.sty
-doc/metropolistheme.pdf
+doc/metropolitokentheme.pdf
 demo/demo.pdf
 /*.jpg
+*.DS_Store

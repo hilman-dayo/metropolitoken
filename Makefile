@@ -1,6 +1,6 @@
 MAKEFLAGS  := -j 1
 INS         = source/beamerthememetropolitoken.ins
-PACKAGE_SRC = $(wildcard source/*.dtx source/*.jpg)
+PACKAGE_SRC = $(wildcard source/*.dtx)
 PACKAGE_STY = $(notdir $(PACKAGE_SRC:%.dtx=%.sty))
 DEMO_SRC    = demo/demo.tex demo/demo.bib
 DEMO_PDF    = demo/demo.pdf
@@ -35,11 +35,17 @@ clean: clean-cache clean-sty
 install: $(PACKAGE_STY) $(DOC_PDF)
 	@mkdir -p $(INSTALL_DIR)
 	@cp $(PACKAGE_STY) $(INSTALL_DIR)
+	@cp logo.jpg $(INSTALL_DIR)
 	@mkdir -p $(DOC_DIR)
 	@cp $(DOC_PDF) $(DOC_DIR)
 
+
+# Below was intended for uninstall. For some reasons, it does not work.
+# Good for studying...
+# @rm -f "$(INSTALL_DIR)/*"
+# @rm -f "$(addprefix $(INSTALL_DIR)/, $(PACKAGE_STY))" "$(addprefix $(INSTALL_DIR)/, .DS_Store)"
 uninstall:
-	@rm -f "$(addprefix $(INSTALL_DIR)/, $(PACKAGE_STY))"
+	@rm -f $(INSTALL_DIR)/*
 	@rmdir "$(INSTALL_DIR)"
 	@rm -f "$(DOC_DIR)/$(notdir $(DOC_PDF))"
 	@rmdir "$(DOC_DIR)"
@@ -49,6 +55,7 @@ clean-cache:
 
 clean-sty:
 	@rm -f $(PACKAGE_STY)
+	@rm -f logo.jpg
 
 ctan: $(CTAN_CONTENT) ctan-version
 	@tar --transform "s@\(.*\)@metropolitoken/\1@" -cf metropolitoken-$(shell date "+%Y-%m-%d").tar.gz $(CTAN_CONTENT)
@@ -60,6 +67,7 @@ $(CACHE_DIR):
 	@mkdir -p $(CACHE_DIR)
 
 $(PACKAGE_STY): $(PACKAGE_SRC) $(INS) | clean-cache $(CACHE_DIR)
+	@cp source/logo.jpg logo.jpg
 	@cd $(dir $(INS)) && latex -output-directory=$(CACHE_DIR) $(notdir $(INS))
 	@cp $(addprefix $(CACHE_DIR)/,$(PACKAGE_STY)) .
 
