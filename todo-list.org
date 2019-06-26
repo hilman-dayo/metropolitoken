@@ -36,8 +36,8 @@ The things need to be done to convert =metropolis= to =metropolistoken=.
   - [X] put lab's image file
   - [X] edit the innertheme.dtx to reflect my needs...
 
-* Others/Cleaning [0/5]
-  - [ ] Write README accordingly
+* Others/Cleaning [1/5]
+  - [X] Write README accordingly
   - [ ] Delete NEWS?
   - [ ] Look at the =demo.tex=. Looks like there are some cool stuff in there.
   - [ ] Try to produce =*.sty= file by run Latex directly on =source/bemaerthememetropolitoken.ins=.
